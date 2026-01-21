@@ -1,13 +1,20 @@
-import React, { useState } from 'react'
-import { Button, Pressable, StyleSheet, Text, View } from 'react-native'
 import { PrimaryButton } from '../components/shared/PrimaryButton';
+import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { Button } from 'react-native-paper'
+import React, { useState } from 'react'
+
 
 export const CounterScreen = () => {
-
     const [count, setCount] = useState(0);
 
     return (
         <View style={styles.container}>
+            <Button
+                onPress={() => { setCount(count - 1) }}
+                onLongPress={() => { setCount(0) }}
+            >
+                Decrementar
+            </Button>
             <PrimaryButton
                 label={"-1"}
                 onPress={() => { setCount(count - 1) }}
